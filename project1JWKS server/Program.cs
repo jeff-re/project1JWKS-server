@@ -146,7 +146,7 @@ public class AuthController : ControllerBase
         var (key, kid) = keyData.Value;
         var now = DateTime.UtcNow;
 
-        // Set token expiry and notBefore depending on whether expired tokens are requested
+        
         var expiry = expired ? now.AddMinutes(-30) : now.AddMinutes(30);
         var notBefore = expired ? now.AddMinutes(-60) : now;
 
